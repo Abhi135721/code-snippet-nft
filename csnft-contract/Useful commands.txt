@@ -1,0 +1,9 @@
+--Truffle not getting executed on command prompt
+--command to change the execution policy
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+
+--to import ERC721.sol
+npm install @openzeppelin/contracts
+
+--bigint error
+npm install bigint-buffer

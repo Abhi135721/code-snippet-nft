@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Counter - Dapp </title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <link href="css/toastr.min.css" rel="stylesheet">
+      <link href="css/ip2location-image-sprite.css" rel="stylesheet">
+  </head>  
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          CSE 4/526 Counter Dapp
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        </div>
+        <button
+          class="btn btn-light"
+          type="submit"
+        >
+          Connect to MetaMask
+        </button>
+      </div>
+    </nav>
+      <div class='container'>
+        <div class="text-center p-4">
+          <h1>Counter Dapp</h1>      
+        </div>
+        <div class='row col-lg-12 text-center'>             
+          <div class="col-lg-6 windowbox">
+            <div class="input-group mb-3">
+              <button class="btn btn-outline-primary" type="button" id="initilaizeCounter" data-mdb-ripple-color="dark">
+                Initialize
+              </button>
+              <input
+                id="Initialize"
+                type="number"
+                class="form-control"
+                placeholder="Enter value"
+                aria-label="Example text with button addon"
+                aria-describedby="button-addon1"
+              />
+            </div>
+            <div class="input-group mb-3">
+              <button class="btn btn-outline-primary" type="button" id="incrementCounter" data-mdb-ripple-color="dark">
+                Increment
+              </button>
+              <input
+                id="Increment"
+                type="number"
+                class="form-control"
+                placeholder="Enter value"
+                aria-label="Example text with button addon"
+                aria-describedby="button-addon1"
+              />
+            </div>
+            <div class="input-group mb-3">
+              <button class="btn btn-outline-primary" type="button" id="decrementCounter" data-mdb-ripple-color="dark">
+                Decrement
+              </button>
+              <input
+                id="Decrement"
+                type="number"
+                class="form-control"
+                placeholder="Enter value"
+                aria-label="Example text with button addon"
+                aria-describedby="button-addon1"
+              />
+            </div>
+            
+          </div>
+          <div class="col-lg-6 windowbox">
+            <div class="d-grid gap-3">
+              <div class="p-2">
+                <button type="button" class="btn btn-primary" id="getCounter">Get Counter Value</button>
+              </div>
+              <div class="p-2">
+                <h3 class="text-truncate" id="counter_value"></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+    <script  src="js/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.37/dist/web3.min.js"></script>
+    <script src="js/app.js"></script>
+
+</html>
