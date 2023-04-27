@@ -39,9 +39,27 @@ App = {
     
 }
 
+function showStartPage(){
+
+}
+
+function showCreateCodeSnippet(){
+	$("#explore-code-snippets").hide();
+	$("#create-code-snippet").show();
+}
+
+function exploreCodeSnippets(){
+	$("#explore-code-snippets").show();
+	$("#create-code-snippet").hide();
+}
+
+
 $(function() {
     $(window).load(function() {
       App.init();
+
+      showStartPage();
+
     //   toastr.options = {
     //     "positionClass": "right newtoast",
     //     "preventDuplicates": true,

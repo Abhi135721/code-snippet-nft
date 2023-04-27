@@ -10,6 +10,8 @@
         <link rel="icon" type="image/x-icon" href="images/code_1.png" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="/js/app.js" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
@@ -29,8 +31,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Explore Code NFTs">Explore Code NFTs</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Create Code Snippet</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" onclick="exploreCodeSnippets()" href="#explore-code-snippets">Explore Code NFTs</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" onclick="showCreateCodeSnippet()" href="#create-code-snippet">Create Code Snippet</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">My Code Snippets</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="btn btn-xl btn-outline-light">
                             <i class="fas fa-wallet me-2"></i>
@@ -41,32 +43,36 @@
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
+        <header class="masthead bg-primary text-white text-center" id ="startPage">
             <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image-->
-                <!--<img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />-->
-                <!-- Masthead Heading-->
-                <div style="height: 150px;"></div>
-                <h1 class="masthead-heading text-uppercase mb-0" style="width: 800px;">Publish your code snippets as NFTs</h1>
-                <!-- Icon Divider-->
-                <!-- <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div> -->
-                <!-- Masthead Subheading-->
                 <div style="height: 100px;"></div>
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light">
-                        <i class="fas fa-wallet me-2"></i>
-                        Connect Wallet
-                    </a>
+                <h1 class="masthead-heading text-uppercase mb-0" style="width: 800px;">Publish your code snippets as NFTs</h1>
+                
+                <div style="height: 100px;"></div>
+                <div class="float-container">
+					<div class="float-child">
+						<div class="text-center mt-4" >
+							<a class="btn btn-xl btn-outline-light" href="#create-code-snippet" onclick="showCreateCodeSnippet()">
+								<i class="fas fa-code me-2"></i>
+								Create Code Snippet
+							</a>
+						</div>
+					</div>
+					<div class="float-child">
+						<div class="text-center mt-4">
+							<a class="btn btn-xl btn-outline-light" href="#explore-code-snippets" onclick="exploreCodeSnippets()">
+								<i class="fas fa-search me-2"></i>
+								Explore Code NFTs
+							</a>
+						</div>
+					</div>
                 </div>
+
                 <div style="height: 100px;"></div>
             </div>
         </header>
         <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
+        <section class="page-section portfolio" id="explore-code-snippets">
             <div class="container">
                 <!-- Portfolio Section Heading-->
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Code Snippets</h2>
@@ -175,10 +181,10 @@
         </section>
 
 
-        <!-- Contact Section-->
-        <section class="page-section" id="contact">
+        <!-- Create code snippet Section-->
+        <section class="page-section" id="create-code-snippet">
             <div class="container">
-                <!-- Contact Section Heading-->
+                <!--Heading-->
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Create Code Snippet</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
@@ -194,7 +200,7 @@
                       <input type="text" id="form4Example1" class="form-control" />
                     </div>
 
-                    <div class="form-outline mb-4 dropdown">
+                      <!-- <div class="form-outline mb-4 dropdown">
                         <label class="form-label" for="dropdownMenuButton">Select Language</label>
                         <br>
                         <button
@@ -212,11 +218,34 @@
                           <li><a class="dropdown-item" href="#">Python</a></li>
                         </ul>
                       </div>
-
-                    <!-- Message input -->
+                      <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Select language
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">C</a>
+                          <a class="dropdown-item" href="#">C++</a>
+                          <a class="dropdown-item" href="#">Java</a>
+                          <a class="dropdown-item" href="#">Python</a>
+                          <a class="dropdown-item" href="#">Solidity</a>
+                        </div>
+                      </div> -->
+                      <div>
+                        <select class="form-select" aria-label="Default select example">
+                          <option selected>Select language</option>
+                          <option value="C">C</option>
+                          <option value="C++">C++</option>
+                          <option value="Java">Java</option>
+                          <option value="Python">Python</option>
+                          <option value="Solidity">Solidity</option>
+                        </select>
+                      </div>
+                      
+                    </br>
+                    <!-- Code input -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form4Example3">Code</label>
-                      <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+                      <textarea class="form-control" id="form4Example3" rows="10"></textarea>
                       
                     </div>
                   

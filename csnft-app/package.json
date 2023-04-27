@@ -12,6 +12,7 @@
   "dependencies": {
     "cjs": "^0.0.11",
     "express": "^4.16.4",
+    "html": "^1.0.0",
     "node-localstorage": "^2.1.4"
   }
 }
