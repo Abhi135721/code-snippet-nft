@@ -36,7 +36,7 @@ contract CodeSnippetNFT is ERC721 {
     uint[] private pendingApprovalCodeSnippetTokens;
 
     //CodeSnippet[] private codeSnippets;
-    // Using the tockenis of codesnippet to identify the details of codesnippets uniquely
+    // Using the tokenids of codesnippet to identify the details of codesnippets uniquely
     mapping (uint => CodeSnippet) private codeSnippets;
 
     //mapping of creators with their tokenIds who created code snippets 
@@ -75,16 +75,20 @@ contract CodeSnippetNFT is ERC721 {
         return block.timestamp;
     }
 
+    function getCustodianAddress() public view onlyCustodian returns (uint256){
+        return custodian;
+    }
+
     function createCodeSnippet(string memory name, string memory language, string memory code, uint price) public returns(uint256)  {
        //Using the time stamp as the unique Tocken id.
         uint256 tokenId = getCurrentTimeStamp();
         address creator = msg.sender;
-        CodeSnippet memory newCodeSnippet = CodeSnippet(name, language, code, price, creator, ApprovalStatus.notverified);
-        codeSnippets[tokenId] = newCodeSnippet;
-        pendingApprovalCodeSnippetTokens.push(tokenId);
         //Creating the tocken for codesnippet
         _safeMint(creator, tokenId);
         creators[creator] = tokenId;
+        CodeSnippet memory newCodeSnippet =  CodeSnippet(name, language, code, price, creator, ApprovalStatus.notverified);
+        codeSnippets[tokenId] = newCodeSnippet;
+        pendingApprovalCodeSnippetTokens.push(tokenId);
         return tokenId;
     }
 
