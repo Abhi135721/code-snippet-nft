@@ -185,8 +185,10 @@ contract CodeSnippetNFT is ERC721 {
         safeTransferFrom(currentOwner, _buyer, tokenId);
         codeSnippets[tokenId].currentOwner = _buyer;
 
+        address payable payCustodian = payable(custodian);
         //transfer amount from buyer to original owner
-        currentOwner.transfer(price);
+        currentOwner.transfer(price * 90 / 100);
+        payCustodian.transfer(price * 10 / 100);
 
         codeSnippets[tokenId].approvalStatus = ApprovalStatus.requestapproved;
 

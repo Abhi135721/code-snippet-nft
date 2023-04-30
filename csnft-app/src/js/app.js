@@ -298,34 +298,82 @@ App = {
 		});
 	},
 
+	validateCreateCodeSnippet: function()
+	{
+		var codeSnippetName = $("#codeSnippetName").val();
+		var codeSnippetPrice = $("#codeSnippetPrice").val();
+		var codeSnippetLanguage = $("#codeSnippetLanguage").val();
+		var codeSnippet = btoa(($("#codeSnippet").val()));
+
+		var re = /^[-+]?[0-9]+\.[0-9]+$/;
+
+		if(codeSnippetName == "")
+		{
+			return 1;
+		}
+		else if(codeSnippetPrice == "" || !codeSnippetPrice.match(re))
+		{
+			return 2;
+		}
+		else if(codeSnippetLanguage == -1)
+		{
+			return 3;
+		}
+		else if(codeSnippet == "")
+		{
+			return 4;
+		}
+	},
+
 	handleCreateCodeSnippet : function(){
-		//console.log(App.contracts.Payment);
-		//App.populateAddress();
-		App.web3.eth.getCoinbase(function(err, account) {
-			if (err === null) {
-				console.log("Your Account: " + account);
-				var codeSnippetName = $("#codeSnippetName").val();
-				var codeSnippetPrice = $("#codeSnippetPrice").val();
-				var codeSnippetLanguage = $("#codeSnippetLanguage").val();
-				var codeSnippet = btoa(($("#codeSnippet").val()));
-
-				var weiamount=App.web3.utils.toWei(codeSnippetPrice,'ether')
-				var amount=App.web3.utils.toHex(weiamount)
-
-				console.log(codeSnippetName);
-				console.log(amount);
-				console.log(codeSnippetLanguage);
-				console.log(codeSnippet);
-				var option={from:account}
-				App.contracts.Payment.methods.createCodeSnippet(codeSnippetName, codeSnippetLanguage, codeSnippet, amount).send(option).on('receipt', (receipt) =>{
-					if(receipt.status){
-						alert("Code creation success");
-						showStartPage();
-					}
-				});
+		var isValid = App.validateCreateCodeSnippet();
+		if(isValid == 0)
+		{	
+			App.web3.eth.getCoinbase(function(err, account) {
+				if (err === null) {
+					console.log("Your Account: " + account);
+					var codeSnippetName = $("#codeSnippetName").val();
+					var codeSnippetPrice = $("#codeSnippetPrice").val();
+					var codeSnippetLanguage = $("#codeSnippetLanguage").val();
+					var codeSnippet = btoa(($("#codeSnippet").val()));
+	
+					var weiamount=App.web3.utils.toWei(codeSnippetPrice,'ether')
+					var amount=App.web3.utils.toHex(weiamount)
+	
+					console.log(codeSnippetName);
+					console.log(amount);
+					console.log(codeSnippetLanguage);
+					console.log(codeSnippet);
+					var option={from:account}
+					App.contracts.Payment.methods.createCodeSnippet(codeSnippetName, codeSnippetLanguage, codeSnippet, amount).send(option).then(function(receipt){
+						if(receipt.status){
+							//$("#alert").alert();
+							alert("Code creation success");
+							showStartPage();
+						}
+					});
+	
+				}
+			});
+		}
+		else{
+			switch(isValid){
+				case 1: 
+					alert("Invalid Name");
+					break;
+				case 2: 
+					alert("Invalid Price. Please enter a valid price");
+					break;
+				case 3: 
+					alert("Please select the language to continue");
+					break;
+				case 4: 
+					alert("Invalid Code Snippet");
+					break;
 
 			}
-		});
+		}
+		
 	},
 
 	viewAndApproveCodeSnippet: function(tokenId, isOnlyView){
@@ -591,12 +639,11 @@ function myCodeSnippets(){
 
 
 $(function() {
-    // $(window).load(function() {
       App.init();
+	  $('[data-toggle="tooltip"]').tooltip();
     //   toastr.options = {
     //     "positionClass": "right newtoast",
     //     "preventDuplicates": true,
     //     "closeButton": true
     //   };
-    // });
   });
