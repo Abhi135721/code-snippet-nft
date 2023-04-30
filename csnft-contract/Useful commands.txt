@@ -7,3 +7,11 @@ npm install @openzeppelin/contracts
 
 --bigint error
 npm install bigint-buffer
+
+
+
+
+TODO 
+1. Remove text box content - approve code snippet - done
+2. Show success messages and error messages.
+3. Change text.. when no code snippets available

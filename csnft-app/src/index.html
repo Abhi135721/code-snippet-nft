@@ -41,9 +41,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" onclick="exploreCodeSnippets()" href="#explore-code-snippets">Explore Code NFTs</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="btn-explore-code-snippets" href="#explore-code-snippets">Explore Code NFTs</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" onclick="showCreateCodeSnippet()" href="#create-code-snippet">Create Code Snippet</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">My Code Snippets</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" id="btn-my-code-snippets" href="#view-my-code-snippets">My Code Snippets</a></li>
                         <!-- <li class="nav-item mx-0 mx-lg-1"><a class="btn btn-xl btn-outline-light">
                             <i class="fas fa-wallet me-2"></i>
                             Connect Wallet
@@ -55,10 +55,10 @@
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center" id ="startPage">
             <div class="container d-flex align-items-center flex-column">
-                <div style="height: 100px;"></div>
+                <div style="height: 80px;"></div>
                 <h1 class="masthead-heading text-uppercase mb-0" style="width: 800px;">Publish your code snippets as NFTs</h1>
                 
-                <div style="height: 100px;"></div>
+                <div style="height: 50px;"></div>
                 <div class="float-container">
 					<div class="float-child">
 						<div class="text-center mt-4" >
@@ -70,9 +70,25 @@
 					</div>
 					<div class="float-child">
 						<div class="text-center mt-4">
-							<a class="btn btn-xl btn-outline-light" id="a-explore-code-snippets" href="#explore-code-snippets" onclick="exploreCodeSnippets()">
+							<a class="btn btn-xl btn-outline-light" id="a-explore-code-snippets" href="#explore-code-snippets" onclick="App.handleGetApprovedCodeSnippets()">
 								<i class="fas fa-search me-2"></i>
 								Explore Code NFTs
+							</a>
+						</div>
+					</div>
+					<div class="float-child">
+						<div class="text-center mt-4">
+							<a class="btn btn-xl btn-outline-light" id="a-approve-code-snippets" href="#approve-code-snippets">
+								<i class="fas fa-check me-2"></i>
+								Approve Code Snippet NFTs
+							</a>
+						</div>
+					</div>
+					<div class="float-child">
+						<div class="text-center mt-4">
+							<a class="btn btn-xl btn-outline-light" id="a-approve-requested-code-snippets" href="#approve-requested-code-snippets">
+								<i class="fas fa-check me-2"></i>
+								Approve Requested Code Snippet NFTs
 							</a>
 						</div>
 					</div>
@@ -83,6 +99,7 @@
         </header>
         <!-- Portfolio Section-->
         <section class="page-section portfolio" id="explore-code-snippets">
+			<div style="height: 80px;"></div>
             <div class="container">
                 <!-- Portfolio Section Heading-->
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Code Snippets</h2>
@@ -94,105 +111,141 @@
                 </div>
                 <div class="container-fluid" style="background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);">
                     <div class="container p-5">
-                      <div class="row">
-                        <div class="col-lg-4 col-md-12 mb-2">
-                          <div class="card h-100 shadow-lg">
-                            <div class="card-body">
-                              <div class="text-center p-3">
-                                <h5 class="card-title">Counter.sol</h5>
-                                <br><br>
-                                <h5 class="card-title">Solidity</h5>
-                                <br><br>
-                                <span class="h2">2 ETH</span>
-                                <br><br>
-                              </div>
-                              
-                            </div>
-                            <div class="card-body text-center">
-                              <button class="btn btn-outline-primary btn-lg" style="border-radius:30px">View & Approve</button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 mb-2">
-                            <div class="card h-100 shadow-lg">
-                              <div class="card-body">
-                                <div class="text-center p-3">
-                                  <h5 class="card-title">Quick Sort Algorithm</h5>
-                                  <br><br>
-                                  <h5 class="card-title">C</h5>
-                                  <br><br>
-                                  <span class="h2">2 ETH</span>
-                                  <br><br>
-                                </div>
-                                
-                              </div>
-                              <div class="card-body text-center">
-                                <button class="btn btn-outline-primary btn-lg" style="border-radius:30px">View & Approve</button>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-4 col-md-12 mb-2">
-                            <div class="card h-100 shadow-lg">
-                              <div class="card-body">
-                                <div class="text-center p-3">
-                                  <h5 class="card-title">Krushkals Algorithm</h5>
-                                  <br><br>
-                                  <h5 class="card-title">C++</h5>
-                                  <br><br>
-                                  <span class="h2">0.5 ETH</span>
-                                  <br><br>
-                                </div>
-                                
-                              </div>
-                              <div class="card-body text-center">
-                                <button class="btn btn-outline-primary btn-lg" style="border-radius:30px">View & Approve</button>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-4 col-md-12 mb-2">
-                            <div class="card h-100 shadow-lg">
-                              <div class="card-body">
-                                <div class="text-center p-3">
-                                  <h5 class="card-title">Multi-class binary neural network for hand written digits</h5>
-                                  <br><br>
-                                  <h5 class="card-title">Python</h5>
-                                  <br><br>
-                                  <span class="h2">5 ETH</span>
-                                  <br><br>
-                                </div>
-                                
-                              </div>
-                              <div class="card-body text-center">
-                                <button class="btn btn-outline-primary btn-lg" style="border-radius:30px">View & Approve</button>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-4 col-md-12 mb-2">
-                            <div class="card h-100 shadow-lg">
-                              <div class="card-body">
-                                <div class="text-center p-3">
-                                  <h5 class="card-title">Kingdom of kittens - Kattis</h5>
-                                  <br><br>
-                                  <h5 class="card-title">Java</h5>
-                                  <br><br>
-                                  <span class="h2">3 ETH</span>
-                                  <br><br>
-                                </div>
-                                
-                              </div>
-                              <div class="card-body text-center">
-                                <button class="btn btn-outline-primary btn-lg" style="border-radius:30px">View & Approve</button>
-                              </div>
-                            </div>
-                          </div>
+                      	<div class="row"  id="listApprovedCodeSnippets">
+                    	</div>
                            
                     </div>
             </div>
         </section>
 
+		<section class="page-section portfolio" id="approve-requested-code-snippets">
+			<div style="height: 80px;"></div>
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Code Snippets</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="container-fluid" style="background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);">
+                    <div class="container p-5">
+                      	<div class="row"  id="listRequestedCodeSnippets">
+                    	</div>
+                           
+                    </div>
+            </div>
+        </section>
+
+		<section class="page-section portfolio" id="view-my-code-snippets">
+			<div style="height: 80px;"></div>
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">My Code Snippets</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="container-fluid" style="background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);">
+                    <div class="container p-5">
+                      	<div class="row"  id="viewCodeSnippets">
+                    	</div>
+                    </div>
+            </div>
+        </section>
+
+		<section class="page-section portfolio" id ="approve-code-snippets">
+			<div style="height: 80px;"></div>
+			<div class="container">
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Code Snippets</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="container-fluid" style="background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);">
+                    <div class="container p-5">
+                      	<div class="row" id="codeSnippetsForApproval">
+                        
+						</div>
+                    </div>
+            	</div>
+			</div>
+		</section>
+
+		<section class="page-section" id="approve-single-code-snippet">
+			<div style="height: 80px;"></div>
+			<div class="container">
+                <!--Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" id="viewCodeSnippetText">Approve Code Snippet</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                <form>
+                    <!-- Name input -->
+                    <div class="form-outline mb-4">
+                    <label class="form-label" for="approvalCodeSnippetName">Name</label>
+                      <input type="text" id="approvalCodeSnippetName" class="form-control" />
+                    </div>
+					<div>
+						<label class="form-label" for="approvalCodeSnippetPrice">Price</label>
+                      	<input type="text" id="approvalCodeSnippetPrice" class="form-control" />
+					</div>
+					<br/>
+					<!--Select language-->
+					<div>
+						<label class="form-label" for="approvalCodeSnippetLanguage">Select Language</label>
+						<select class="form-select" id="approvalCodeSnippetLanguage" aria-label="Select language">
+							<option selected value="-1">Select language</option>
+							<option id="C" value="C">C</option>
+							<option id="C++" value="C++">C++</option>
+							<option id="Java" value="Java">Java</option>
+							<option id="Python" value="Python">Python</option>
+							<option id="Solidity" value="Solidity">Solidity</option>
+						</select>
+					</div>
+                      
+                    </br>
+                    <!-- Code input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="approvalCodeSnippet">Code</label>
+                      	<textarea class="form-control" id="approvalCodeSnippet" rows="10"></textarea>
+                    </div>
+                  
+					<input type="text" value="" id="hiddenApprovaltokenId" hidden disabled/>
+                    <!-- Submit button -->
+					<div style="width: 100%;">
+						<div style="float: left;">
+							<button type="submit" class="btn btn-outline-primary btn-block" onclick="App.handleApproveCodeSnippets();" id="btn-cancel-code-snippet">Cancel</button>
+						</div>
+						<div style="float: left;">
+							<button type="submit" class="btn btn-outline-primary btn-block" onclick="App.handleViewCodeSnippets();" id="btn-cancel-view-code-snippet">Cancel</button>
+						</div>
+						<div  style="float: right;">
+							<button type="submit" class="btn btn-primary btn-block" id="btn-approve-code-snippet">Approve Code Snippet</button>
+						</div>
+					</div>
+
+					
+                    
+					
+                  </form>
+                </div>
+            </div>
+		</section>
 
         <!-- Create code snippet Section-->
         <section class="page-section" id="create-code-snippet">
+			<div style="height: 80px;"></div>
             <div class="container">
                 <!--Heading-->
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Create Code Snippet</h2>
