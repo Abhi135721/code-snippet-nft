@@ -1,0 +1,21 @@
+{
+  "name": "csnft-app",
+  "version": "1.0.0",
+  "description": "Dapp for Code snippets NFT",
+  "main": "csnft-app/index.js",
+  "scripts": {
+    "start": "node csnft-app/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sai Abhilash Kondepati",
+  "license": "ISC",
+  "dependencies": {
+    "cjs": "^0.0.11",
+    "express": "^4.16.4",
+    "html": "^1.0.0",
+    "node-localstorage": "^2.1.4"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
