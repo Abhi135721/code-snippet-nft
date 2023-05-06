@@ -84,7 +84,7 @@ contract CodeSnippetNFT is ERC721 {
         return custodian;
     }
 
-    function createCodeSnippet(string memory name, string memory language, string memory code, uint256 price) public returns(uint256)  {
+    function createCodeSnippet(string memory name, string memory language, string memory code, uint256 price) public  {
        //Using the time stamp as the unique Tocken id.
         uint256 tokenId = getCurrentTimeStamp();
         address creator = msg.sender;
@@ -96,7 +96,6 @@ contract CodeSnippetNFT is ERC721 {
         CodeSnippet memory newCodeSnippet =  CodeSnippet(name, language, code, price, creator, ApprovalStatus.notverified, address(0));
         codeSnippets[tokenId] = newCodeSnippet;
         pendingApprovalCodeSnippetTokens.push(tokenId);
-        return tokenId;
     }
 
     function getIndex(uint256[] memory arr, uint256 item)public view returns(uint256){

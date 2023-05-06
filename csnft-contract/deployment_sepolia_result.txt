@@ -1,0 +1,125 @@
+Compiling your contracts...
+===========================
+> Compiling .\contracts\Migrations.sol-bin. Attempt #1
+> Compiling .\contracts\csnft.sol
+> Compiling .\node_modules\@openzeppelin\contracts\token\ERC721\ERC721.sol
+> Compiling .\node_modules\@openzeppelin\contracts\token\ERC721\IERC721.sol
+> Compiling .\node_modules\@openzeppelin\contracts\token\ERC721\IERC721Receiver.sol
+> Compiling .\node_modules\@openzeppelin\contracts\token\ERC721\extensions\IERC721Metadata.sol
+> Compiling .\node_modules\@openzeppelin\contracts\utils\Address.sol
+> Compiling .\node_modules\@openzeppelin\contracts\utils\Context.sol
+> Compiling .\node_modules\@openzeppelin\contracts\utils\Strings.sol
+> Compiling .\node_modules\@openzeppelin\contracts\utils\introspection\ERC165.sol
+> Compiling .\node_modules\@openzeppelin\contracts\utils\introspection\IERC165.sol
+> Compiling .\node_modules\@openzeppelin\contracts\utils\math\Math.sol
+> Artifacts written to C:\Abhi\UB\Spring 2023\Blockchain\Project\BlockChain_Phase2\csnft-contract\build\contracts
+> Compiled successfully using:
+   - solc: 0.8.19+commit.7dd6d404.Emscripten.clang
+⠏ Fetching solc version list from solc-bin. Attempt #1
+⠧ Fetching solc version list from solc-bin. Attempt #1
+Migrations dry-run (simulation)
+===============================
+> Network name:    'sepolia-fork'
+> Network id:      11155111
+> Block gas limit: 30000000 (0x1c9c380)
+
+
+1_initial_migration.js
+======================
+⠇ Fetching solc version list from solc-bin. Attempt #1
+   Deploying 'Migrations'
+   ----------------------
+   > block number:        3427118 solc-bin. Attempt #1
+   > block timestamp:     1683333451
+   > account:             0x573C1431F4c373cA73a06e4D93AE0E01F979f39C
+   > balance:             0.499314779998081384
+   > gas used:            274088 (0x42ea8)
+   > gas price:           2.500000007 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000685220001918616 ETH
+
+   -------------------------------------in. Attempt #1
+   > Total cost:     0.000685220001918616 ETH
+
+
+2_deploy_contracts.js
+=====================
+⠴ Fetching solc version list from solc-bin. Attempt #1
+   Deploying 'CodeSnippetNFT'
+   --------------------------
+   > block number:        3427120 solc-bin. Attempt #1                                                                                                               
+   > block timestamp:     1683333452
+   > account:             0x573C1431F4c373cA73a06e4D93AE0E01F979f39C
+   > balance:             0.488248994967097186
+   > gas used:            4380379 (0x42d6db)
+   > gas price:           2.500000007 gwei
+   > value sent:          0 ETH
+   > total cost:          0.010950947530662653 ETH
+
+   -------------------------------------in. Attempt #1                                                                                                               
+   > Total cost:     0.010950947530662653 ETH
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.011636167532581269 ETH
+
+
+⠙ Fetching solc version list from solc-bin. Attempt #1
+⠴ Fetching solc version list from solc-bin. Attempt #1
+Starting migrations...
+======================
+> Network name:    'sepolia'
+> Network id:      11155111
+> Block gas limit: 30000000 (0x1c9c380)
+
+
+1_initial_migration.js
+======================
+⠼ Fetching solc version list from solc-bin. Attempt #1
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x11f892c4b6eeac7b1bf203abab1a39b2a190171cd275431b17dff95504d0f730
+   > Blocks: 1            Seconds: 12c-bin. Attempt #1
+   > contract address:    0xf8d7872232B33a8890331e1A27F15042aE983DFf
+   > block number:        3427123
+   > block timestamp:     1683333468
+   > account:             0x573C1431F4c373cA73a06e4D93AE0E01F979f39C
+   > balance:             0.499314619998080936
+   > gas used:            274152 (0x42ee8)
+   > gas price:           2.500000007 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000685380001919064 ETH
+
+   > Saving migration to chain.om solc-bin. Attempt #1
+   > Saving artifacts to chain.
+   -------------------------------------
+   > Total cost:     0.000685380001919064 ETH
+
+⠋ Fetching solc version list from solc-bin. Attempt #1                                                                                                               
+2_deploy_contracts.js
+=====================
+⠙ Fetching solc version list from solc-bin. Attempt #1
+   Deploying 'CodeSnippetNFT'
+   --------------------------
+   > transaction hash:    0x6c69e5fa94253eb21f27d416368924c4799dbd0dd38f7b1e5f3a94ff66800e92
+   > Blocks: 0            Seconds: 9lc-bin. Attempt #1
+   > contract address:    0xF00a8c9cE72ddAF6514537a3A4e77E2F102CeAF7
+   > block number:        3427125
+   > block timestamp:     1683333492
+   > account:             0x573C1431F4c373cA73a06e4D93AE0E01F979f39C
+   > balance:             0.488245589967087652
+   > gas used:            4381677 (0x42dbed)
+   > gas price:           2.500000007 gwei
+   > value sent:          0 ETH
+   > total cost:          0.010954192530671739 ETH
+
+   > Saving migration to chain.om solc-bin. Attempt #1
+   > Saving artifacts to chain.
+   -------------------------------------
+   > Total cost:     0.010954192530671739 ETH
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.011639572532590803 ETH
